@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desire coding</title>
+<meta name="description" content="Desire coding: end users rapidly building their own software with AI assistance, understood as a desire path that reveals unmet need rather than as a substitute for professional engineering.">
+<meta name="author" content="Shana Kayne Beach">
+<meta property="og:title" content="Desire coding">
+<meta property="og:description" content="A name for vibe coding that says what it is for: a desire path through software.">
+<meta property="og:url" content="https://desirecoding.com/">
+<meta property="article:published_time" content="2026-09-02">
+<link rel="canonical" href="https://desirecoding.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Fraunces:ital,opsz,wght@1,9..144,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --grass: #2f4a2a;
+    --earth: #b8985f;
+    --paper: #eef0e6;
+    --ink: #1b2318;
+    --pave: #a7ad9f;
+    --measure: 36rem;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--paper); }
+  body {
+    margin: 0;
+    color: var(--ink);
+    font-family: "Fraunces", Georgia, "Times New Roman", serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-variation-settings: "opsz" 14;
+  }
+  a { color: inherit; text-decoration-color: var(--earth); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a:focus-visible { outline: 3px solid var(--earth); outline-offset: 3px; }
+
+  .field {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 46vh;
+  }
+  .field .grid { stroke: var(--pave); stroke-width: 2.5; fill: none; }
+  .field .path { stroke: var(--earth); stroke-width: 7; stroke-linecap: round; fill: none; }
+  .field .grass { fill: var(--grass); }
+
+  main {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+  }
+  h1 {
+    font-weight: 300;
+    font-variation-settings: "opsz" 144;
+    font-size: clamp(3rem, 11vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.6em;
+  }
+  .definition {
+    font-size: 1.45rem;
+    line-height: 1.35;
+    font-weight: 400;
+    margin: 0 0 3rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--earth);
+  }
+  .definition b { font-weight: 600; }
+  h2 {
+    font-weight: 600;
+    font-variation-settings: "opsz" 40;
+    font-size: 1.35rem;
+    line-height: 1.2;
+    margin: 3rem 0 0.6rem;
+  }
+  p { margin: 0 0 1.1rem; }
+  cite { font-style: italic; }
+  .cite {
+    background: #fff;
+    border: 1px solid var(--pave);
+    padding: 1rem 1.1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    margin: 0 0 1.1rem;
+    font-family: inherit;
+  }
+  footer {
+    margin-top: 4rem;
+    font-size: 0.95rem;
+    color: #3f4a3b;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .field .path {
+      stroke-dasharray: 1200;
+      stroke-dashoffset: 1200;
+      animation: wear 1.6s ease-out 0.2s forwards;
+    }
+    @keyframes wear { to { stroke-dashoffset: 0; } }
+  }
+</style>
+</head>
+<body>
+
+<svg class="field" viewBox="0 0 1200 420" role="img" aria-label="A grid of paved paths across a lawn, with a single worn dirt path cutting diagonally between the corners where people actually walk.">
+  <rect class="grass" x="0" y="0" width="1200" height="420"/>
+  <g class="grid">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="150" y1="0" x2="150" y2="420"/>
+    <line x1="300" y1="0" x2="300" y2="420"/>
+    <line x1="450" y1="0" x2="450" y2="420"/>
+    <line x1="600" y1="0" x2="600" y2="420"/>
+    <line x1="750" y1="0" x2="750" y2="420"/>
+    <line x1="900" y1="0" x2="900" y2="420"/>
+    <line x1="1050" y1="0" x2="1050" y2="420"/>
+  </g>
+  <path class="path" d="M 150 315 C 230 340, 300 290, 370 265 S 470 300, 545 260 C 610 225, 590 185, 665 175 S 780 215, 850 180 C 920 148, 900 118, 975 118 S 1020 112, 1050 105"/>
+</svg>
+
+<main>
+  <h1>Desire coding</h1>
+
+  <p class="definition">
+    <b>Desire coding</b> is the practice of end users rapidly building their own software with AI assistance, understood as a desire path: a worn trail that reveals unmet need, not a substitute for professional engineering.
+  </p>
+
+  <h2>It's a signal, not a vibe</h2>
+  <p>Vibe coding describes the mood of the person typing. It says nothing about what the resulting software is for, or what anyone should do with it. Desire coding names the signal. When someone with no engineering training builds a tool to route around non-existent or ineffective software, they have worn a path across the lawn. The path is evidence that shows where the designed route did not go.</p>
+
+  <h2>The metaphor</h2>
+  <p>Planners learned long ago to read <a href="https://reddit.com/r/desirepaths/" target="_blank"  rel="noopener">desire paths</a> before pouring concrete. The same discipline applies to software. User-built prototypes are living requirements. They show professional developers exactly where demand exists, what shape it takes, and which parts of the current system people are willing to abandon. That is good news for classical engineering, not a threat to it.</p>
+  <p>A worn path is not a paved one. Most desire-coded software should never ship as built; the security record on AI-generated code makes that plain. Reading the path is the user's contribution. Deciding whether to pave it, reroute it, or fence it off remains the engineer's job.</p>
+
+  <h2>Lineage</h2>
+  <p>The metaphor already lives in programming. Larry Wall <a href="https://alma.ch/perl/lw-interview.htm" target="_blank" rel="noopener">described Perl</a> as the sidewalks worn into the grass at UC Irvine, formalized after the fact. The HTML5 design principles told standards authors to <a href="https://www.w3.org/TR/html-design-principles/" target="_blank" rel="noopener">pave the cowpaths</a>. Desire coding extends that tradition to the moment when the people wearing the paths can also lay their own gravel.</p>
+
+  <h2>Cite this</h2>
+  <pre class="cite">Beach, Shana Kayne. "Desire coding." desirecoding.com, 2 September 2026. https://desirecoding.com/</pre>
+
+  <footer>
+    <p>Shana Kayne Beach (<a href="https://orcid.org/0009-0009-7465-7447">ORCID 0009-0009-7465-7447</a>) is a doctoral engineering student at Penn State researching human-AI interaction. Contact: shana.beach@psu.edu</p>
+  </footer>
+</main>
+
+</body>
+</html>
