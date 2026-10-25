@@ -1,0 +1,200 @@
+/* Case study pages for desirecoding.com.
+   Layout: one reading column at the definition page's measure; margin notes sit
+   beside it on wide screens and fold into the text column on narrow ones.
+   Single light look, matching the definition page. */
+:root {
+  --grass: #2f4a2a;
+  --earth: #b8985f;
+  --paper: #eef0e6;
+  --ink: #1b2318;
+  --pave: #a7ad9f;
+  --muted: #3f4a3b;
+  --card: #ffffff;
+  --measure: 36rem;
+  --note: 14rem;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  font-variation-settings: "opsz" 14;
+}
+a { color: inherit; text-decoration-color: var(--earth); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--earth); outline-offset: 3px; }
+
+/* Top band: the lawn, with the worn path as a single stroke */
+.band { background: var(--grass); color: var(--paper); }
+.band-inner {
+  max-width: calc(var(--measure) + var(--note) + 3rem);
+  margin: 0 auto;
+  padding-block: 0.8rem;
+  padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  align-items: baseline;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+.band a { text-decoration-color: var(--earth); }
+.band .home { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; text-decoration: none; }
+.crumbs { display: flex; flex-wrap: wrap; gap: 0.25rem 0.6rem; margin: 0; padding: 0; list-style: none; }
+.crumbs li + li::before { content: "/"; margin-right: 0.6rem; color: var(--pave); }
+
+main {
+  max-width: calc(var(--measure) + 2.5rem);
+  margin: 0 auto;
+  padding-block: 2.5rem 5rem;
+  padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
+}
+
+.kicker {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  align-items: center;
+}
+.stream { font-weight: 700; color: var(--grass); }
+.theme-chip {
+  text-transform: none;
+  letter-spacing: 0;
+  border: 1px solid var(--earth);
+  border-radius: 999px;
+  padding: 0.05rem 0.55rem;
+  text-decoration: none;
+}
+h1 {
+  font-weight: 300;
+  font-variation-settings: "opsz" 144;
+  font-size: clamp(2.3rem, 7vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.5em;
+  text-wrap: balance;
+}
+h2 {
+  font-weight: 600;
+  font-variation-settings: "opsz" 40;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  margin: 2.75rem 0 0.6rem;
+  text-wrap: balance;
+}
+p { margin: 0 0 1.1rem; }
+.dates { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin: 0 0 1.75rem; }
+
+/* About this case: the box that lets every post stand alone */
+.about {
+  background: var(--card);
+  border: 1px solid var(--pave);
+  border-left: 4px solid var(--earth);
+  padding: 0.9rem 1.1rem;
+  margin: 0 0 2.25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.about h2 {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 0.35rem;
+  color: var(--muted);
+}
+.about p:last-child { margin-bottom: 0; }
+
+/* Margin notes: short technical asides beside the line they explain.
+   Markup: <span class="margin-note" role="note"> inside the paragraph, right after the
+   sentence it explains. Wide screens float it into the margin on that line; phones show
+   it as an indented aside at that point in the text. */
+.margin-note {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--muted);
+  border-left: 2px solid var(--earth);
+  padding: 0.1rem 0 0.1rem 0.75rem;
+  margin: 0.5rem 0;
+}
+.margin-note .to-lab { display: block; margin-top: 0.3rem; font-weight: 600; color: var(--grass); }
+@media (min-width: 64rem) {
+  main.has-notes { max-width: calc(var(--measure) + var(--note) + 5.5rem); }
+  main.has-notes > * { max-width: var(--measure); }
+  main.has-notes .margin-note {
+    float: right;
+    clear: right;
+    width: var(--note);
+    margin: 0.3rem calc(-1 * (var(--note) + 2.5rem)) 0.5rem 0;
+  }
+}
+
+/* Forward-looking beat: a prediction, an experiment, or a question */
+.forecast {
+  margin: 2.5rem 0 0;
+  padding: 1rem 1.1rem;
+  background: var(--grass);
+  color: var(--paper);
+}
+.forecast .label {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--earth);
+  margin: 0 0 0.35rem;
+}
+.forecast p:last-child { margin-bottom: 0; }
+
+/* Lab note parts */
+.questions { padding-left: 1.25rem; }
+.questions li { margin-bottom: 0.6rem; }
+.refs { padding-left: 1.25rem; font-size: 1rem; }
+.refs li { margin-bottom: 0.5rem; }
+.cite {
+  background: var(--card);
+  border: 1px solid var(--pave);
+  padding: 1rem 1.1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 0 0 1.1rem;
+  font-family: inherit;
+}
+
+/* Changelog: dated edits, kept so posts stay citable */
+.changelog { font-family: var(--sans); font-size: 0.9rem; color: var(--muted); padding-left: 1.25rem; }
+.changelog time { font-variant-numeric: tabular-nums; }
+
+/* Lists of posts on hub and theme pages */
+.post-list { list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; gap: 1rem; }
+.post-list li { border-top: 1px solid var(--pave); padding-top: 0.75rem; }
+.post-list .post-title { font-size: 1.2rem; font-weight: 600; }
+.post-list .post-meta { display: block; font-family: var(--sans); font-size: 0.85rem; color: var(--muted); }
+.empty { font-style: italic; color: var(--muted); }
+.theme-list { padding: 0; list-style: none; display: grid; gap: 1.5rem; }
+.theme-list h2 { margin-top: 0; }
+.theme-list code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85rem; color: var(--muted); }
+
+footer { margin-top: 4rem; font-size: 0.95rem; color: var(--muted); clear: both; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto; }
+}
