@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/case.css">
 </head>
-<body>
+<body class="wide">
 
 <header class="band">
   <div class="band-inner">
@@ -24,7 +24,7 @@
   </div>
 </header>
 
-<main>
+<main class="hub">
   <p class="kicker"><span class="stream">Case study</span><span>Started October 2026</span></p>
   <h1>Serinette</h1>
 
@@ -34,29 +34,37 @@
   </aside>
 
   <!-- Add each post as a list item, newest first, in the matching stream.
-       Give every post its theme chips here and a matching entry on /themes/. -->
+       Give every post its theme chips here and a matching entry on /themes/.
+       On desktop the two streams sit side by side; on phones they stack. -->
+  <div class="streams">
+    <section aria-labelledby="field-notes">
+      <h2 id="field-notes">Field notes</h2>
+      <p class="stream-blurb">The story, for everyone.</p>
+      <p class="empty">The first field note is on its way.</p>
+      <ul class="post-list" hidden>
+        <!--
+        <li>
+          <a class="post-title" href="/cases/serinette/field-notes/POST-SLUG/">Post title</a>
+          <span class="post-meta"><time datetime="YYYY-MM-DD">D Month YYYY</time> · Themes: user-comms, oversight</span>
+        </li>
+        -->
+      </ul>
+    </section>
 
-  <h2 id="field-notes">Field notes</h2>
-  <p class="empty">The first field note is on its way.</p>
-  <ul class="post-list" hidden>
-    <!--
-    <li>
-      <a class="post-title" href="/cases/serinette/field-notes/POST-SLUG/">Post title</a>
-      <span class="post-meta"><time datetime="YYYY-MM-DD">D Month YYYY</time> · Themes: user-comms, oversight</span>
-    </li>
-    -->
-  </ul>
-
-  <h2 id="lab-notes">Lab notes</h2>
-  <p class="empty">Lab notes follow when a theme raises questions worth exploring.</p>
-  <ul class="post-list" hidden>
-    <!--
-    <li>
-      <a class="post-title" href="/cases/serinette/lab-notes/POST-SLUG/">Post title</a>
-      <span class="post-meta"><time datetime="YYYY-MM-DD">D Month YYYY</time> · Themes: user-comms</span>
-    </li>
-    -->
-  </ul>
+    <section aria-labelledby="lab-notes">
+      <h2 id="lab-notes">Lab notes</h2>
+      <p class="stream-blurb">Open questions, for people who build or study AI.</p>
+      <p class="empty">Lab notes follow when a theme raises questions worth exploring.</p>
+      <ul class="post-list" hidden>
+        <!--
+        <li>
+          <a class="post-title" href="/cases/serinette/lab-notes/POST-SLUG/">Post title</a>
+          <span class="post-meta"><time datetime="YYYY-MM-DD">D Month YYYY</time> · Themes: user-comms</span>
+        </li>
+        -->
+      </ul>
+    </section>
+  </div>
 
   <p>Browse every case by <a href="/themes/">theme</a>.</p>
 

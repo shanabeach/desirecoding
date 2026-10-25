@@ -12,6 +12,7 @@
   --card: #ffffff;
   --measure: 36rem;
   --note: 14rem;
+  --page: calc(var(--measure) + 2.5rem);
   --serif: "Fraunces", Georgia, "Times New Roman", serif;
   --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
   color-scheme: light;
@@ -33,7 +34,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--earth); outlin
 /* Top band: the lawn, with the worn path as a single stroke */
 .band { background: var(--grass); color: var(--paper); }
 .band-inner {
-  max-width: calc(var(--measure) + var(--note) + 3rem);
+  max-width: var(--page);
   margin: 0 auto;
   padding-block: 0.8rem;
   padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
@@ -51,7 +52,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--earth); outlin
 .crumbs li + li::before { content: "/"; margin-right: 0.6rem; color: var(--pave); }
 
 main {
-  max-width: calc(var(--measure) + 2.5rem);
+  max-width: var(--page);
   margin: 0 auto;
   padding-block: 2.5rem 5rem;
   padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
@@ -135,7 +136,7 @@ p { margin: 0 0 1.1rem; }
 }
 .margin-note .to-lab { display: block; margin-top: 0.3rem; font-weight: 600; color: var(--grass); }
 @media (min-width: 64rem) {
-  main.has-notes { max-width: calc(var(--measure) + var(--note) + 5.5rem); }
+  body.notes { --page: calc(var(--measure) + var(--note) + 5.5rem); }
   main.has-notes > * { max-width: var(--measure); }
   main.has-notes .margin-note {
     float: right;
@@ -182,6 +183,19 @@ p { margin: 0 0 1.1rem; }
 /* Changelog: dated edits, kept so posts stay citable */
 .changelog { font-family: var(--sans); font-size: 0.9rem; color: var(--muted); padding-left: 1.25rem; }
 .changelog time { font-variant-numeric: tabular-nums; }
+
+/* Case hub: field notes and lab notes side by side on desktop, stacked on phones */
+body.wide { --page: 66rem; }
+main.hub > .kicker, main.hub > h1, main.hub > .about, main.hub > p, main.hub > footer { max-width: var(--measure); }
+.streams { display: grid; grid-template-columns: 1fr; gap: 0 3rem; margin: 2.75rem 0 2rem; }
+.streams h2 { margin-top: 0; }
+.streams > section + section { margin-top: 1.5rem; }
+.streams > section { min-width: 0; }
+.stream-blurb { font-family: var(--sans); font-size: 0.9rem; color: var(--muted); margin: -0.2rem 0 1rem; }
+@media (min-width: 52rem) {
+  .streams { grid-template-columns: 1fr 1fr; }
+  .streams > section + section { margin-top: 0; border-left: 1px solid var(--pave); padding-left: 3rem; margin-left: -1.5rem; }
+}
 
 /* Lists of posts on hub and theme pages */
 .post-list { list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; gap: 1rem; }
