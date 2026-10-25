@@ -25,48 +25,59 @@
 </header>
 
 <main class="hub">
-  <p class="kicker"><span class="stream">Case study</span><span>Started October 2026</span></p>
-  <h1>Serinette</h1>
-
-  <aside class="about" aria-labelledby="about-case">
-    <h2 id="about-case">About this case</h2>
-    <p>I'm building my mom a music notation program from scratch, for her alone, with heavy help from Claude models made by Anthropic. She already uses a commercial notation program she likes, so this one has to earn its place, and she decides if it does. Part of the desire coding case studies; the term is defined at <a href="/">desirecoding.com</a>.</p>
-  </aside>
-
-  <!-- Add each post as a list item, newest first, in the matching stream.
-       Give every post its theme chips here and a matching entry on /themes/.
-       On desktop the two streams sit side by side; on phones they stack. -->
-  <div class="streams">
-    <section aria-labelledby="field-notes">
-      <h2 id="field-notes">Field notes</h2>
-      <p class="stream-blurb">The story, for everyone.</p>
-      <p class="empty">The first field note is on its way.</p>
-      <ul class="post-list" hidden>
-        <!--
-        <li>
-          <a class="post-title" href="/cases/serinette/field-notes/POST-SLUG/">Post title</a>
-          <span class="post-meta"><time datetime="YYYY-MM-DD">D Month YYYY</time> · Themes: user-comms, oversight</span>
-        </li>
-        -->
-      </ul>
-    </section>
-
-    <section aria-labelledby="lab-notes">
-      <h2 id="lab-notes">Lab notes</h2>
-      <p class="stream-blurb">Open questions, for people who build or study AI.</p>
-      <p class="empty">Lab notes follow when a theme raises questions worth exploring.</p>
-      <ul class="post-list" hidden>
-        <!--
-        <li>
-          <a class="post-title" href="/cases/serinette/lab-notes/POST-SLUG/">Post title</a>
-          <span class="post-meta"><time datetime="YYYY-MM-DD">D Month YYYY</time> · Themes: user-comms</span>
-        </li>
-        -->
-      </ul>
-    </section>
+  <div class="hub-head">
+    <div>
+      <p class="kicker"><span class="stream">Case study</span><span>Started October 2026</span></p>
+      <h1>Serinette</h1>
+      <p class="hub-nav">Browse every case by <a href="/themes/">theme</a>.</p>
+    </div>
+    <aside class="about" aria-labelledby="about-case">
+      <h2 id="about-case">About this case</h2>
+      <p>I'm building my mom a music notation program from scratch, for her alone, with heavy help from Claude models made by Anthropic. She already uses a commercial notation program she likes, so this one has to earn its place, and she decides if it does. Part of the desire coding case studies; the term is defined at <a href="/">desirecoding.com</a>.</p>
+    </aside>
   </div>
 
-  <p>Browse every case by <a href="/themes/">theme</a>.</p>
+  <!-- Add each post as a list item, newest first, in the matching panel. For the first post,
+       remove the "hidden" attribute from the list and add "hidden" to the "empty" line.
+       Give every post a matching entry on /themes/.
+       On desktop the panels sit side by side at one height and scroll inside; on phones they stack. -->
+  <div class="streams">
+    <section class="panel" aria-labelledby="field-notes">
+      <div class="panel-head">
+        <h2 id="field-notes">Field notes</h2>
+        <p class="stream-blurb">The story, for everyone.</p>
+      </div>
+      <div class="panel-body" tabindex="0" role="region" aria-label="Field notes list">
+        <p class="empty">The first field note is on its way.</p>
+        <ul class="post-list" hidden>
+          <!--
+          <li>
+            <a class="post-title" href="/cases/serinette/field-notes/POST-SLUG/">Post title</a>
+            <span class="post-meta"><time datetime="YYYY-MM-DD">D Month YYYY</time> · Themes: user-comms, oversight</span>
+          </li>
+          -->
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="lab-notes">
+      <div class="panel-head">
+        <h2 id="lab-notes">Lab notes</h2>
+        <p class="stream-blurb">Open questions, for people who build or study AI.</p>
+      </div>
+      <div class="panel-body" tabindex="0" role="region" aria-label="Lab notes list">
+        <p class="empty">Lab notes follow when a theme raises questions worth exploring.</p>
+        <ul class="post-list" hidden>
+          <!--
+          <li>
+            <a class="post-title" href="/cases/serinette/lab-notes/POST-SLUG/">Post title</a>
+            <span class="post-meta"><time datetime="YYYY-MM-DD">D Month YYYY</time> · Themes: user-comms</span>
+          </li>
+          -->
+        </ul>
+      </div>
+    </section>
+  </div>
 
   <footer>
     <p>Shana Kayne Beach (<a href="https://orcid.org/0009-0009-7465-7447">ORCID 0009-0009-7465-7447</a>) is a doctoral engineering student at Penn State researching human-AI interaction. Contact: shana.beach@psu.edu</p>

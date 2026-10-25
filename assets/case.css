@@ -184,17 +184,53 @@ p { margin: 0 0 1.1rem; }
 .changelog { font-family: var(--sans); font-size: 0.9rem; color: var(--muted); padding-left: 1.25rem; }
 .changelog time { font-variant-numeric: tabular-nums; }
 
-/* Case hub: field notes and lab notes side by side on desktop, stacked on phones */
+/* Case hub: a two-column head (title, about box) over two matching panels,
+   field notes and lab notes. On desktop the panels share one height and scroll
+   inside themselves; on phones everything stacks and the page scrolls. */
 body.wide { --page: 66rem; }
-main.hub > .kicker, main.hub > h1, main.hub > .about, main.hub > p, main.hub > footer { max-width: var(--measure); }
-.streams { display: grid; grid-template-columns: 1fr; gap: 0 3rem; margin: 2.75rem 0 2rem; }
-.streams h2 { margin-top: 0; }
-.streams > section + section { margin-top: 1.5rem; }
-.streams > section { min-width: 0; }
-.stream-blurb { font-family: var(--sans); font-size: 0.9rem; color: var(--muted); margin: -0.2rem 0 1rem; }
+main.hub > footer { max-width: var(--measure); }
+.hub-head { display: grid; grid-template-columns: 1fr; gap: 0 3rem; align-items: end; }
+.hub-head h1 { margin-bottom: 0.3em; }
+.hub-head .about { margin: 0 0 0.25rem; }
+.hub-nav { font-family: var(--sans); font-size: 0.9rem; color: var(--muted); margin: 0 0 1.5rem; }
+.streams { display: grid; grid-template-columns: 1fr; gap: 1.5rem 3rem; margin: 2.25rem 0 0; }
+.panel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--pave);
+  border-top: 4px solid var(--grass);
+}
+.panel-head { padding: 1rem 1.25rem 0.75rem; border-bottom: 1px solid var(--pave); }
+.panel-head h2 { margin: 0; }
+.stream-blurb { font-family: var(--sans); font-size: 0.9rem; color: var(--muted); margin: 0.2rem 0 0; }
+.panel-body { padding: 0 1.25rem 1rem; }
+.panel-body:focus-visible { outline: 3px solid var(--earth); outline-offset: -3px; }
+.panel-body .post-list { margin: 0; gap: 0; }
+.panel-body .post-list li { border-top: 0; border-bottom: 1px solid var(--paper); padding: 0.8rem 0; }
+.panel-body .post-list li:last-child { border-bottom: 0; }
+.panel-body .empty { margin: 1rem 0 0; }
 @media (min-width: 52rem) {
-  .streams { grid-template-columns: 1fr 1fr; }
-  .streams > section + section { margin-top: 0; border-left: 1px solid var(--pave); padding-left: 3rem; margin-left: -1.5rem; }
+  .hub-head, .streams { grid-template-columns: 1fr 1fr; }
+  .hub-head .hub-nav { margin-bottom: 0.25rem; }
+  .panel { height: clamp(20rem, 62vh, 36rem); }
+  .panel-body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    overscroll-behavior: contain;
+    /* Soft shadows appear at the top or bottom edge only when there is more to scroll */
+    background:
+      linear-gradient(var(--card) 30%, rgba(255, 255, 255, 0)) center top / 100% 2.5rem no-repeat local,
+      linear-gradient(rgba(255, 255, 255, 0), var(--card) 70%) center bottom / 100% 2.5rem no-repeat local,
+      radial-gradient(farthest-side at 50% 0, rgba(27, 35, 24, 0.18), rgba(27, 35, 24, 0)) center top / 100% 0.75rem no-repeat scroll,
+      radial-gradient(farthest-side at 50% 100%, rgba(27, 35, 24, 0.18), rgba(27, 35, 24, 0)) center bottom / 100% 0.75rem no-repeat scroll,
+      var(--card);
+  }
+  .panel-body:has(.empty:not([hidden])) { display: grid; place-items: center; text-align: center; }
+  .panel-body .empty { margin: 0; max-width: 18rem; }
 }
 
 /* Lists of posts on hub and theme pages */
