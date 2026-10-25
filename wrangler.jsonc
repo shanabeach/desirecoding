@@ -1,0 +1,13 @@
+// Cloudflare Workers config for desirecoding.com: a static site served from the repo root.
+// Production builds used to detect these settings on their own; branch preview builds
+// need them written down, so this file matches what production detected.
+{
+  "name": "desirecoding",
+  "compatibility_date": "2026-10-19",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "."
+  }
+}
